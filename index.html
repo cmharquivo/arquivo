@@ -7,7 +7,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <style>
-        :root { --primary-color: #00938a; --secondary-color: #00695c; --light-green: #26a69a; --bg-gradient: #f4f7f6; --text-color: #2c3e50; --btn-blue: #2980b9; --btn-green: #27ae60; --btn-teal: #16a085; --btn-orange: #d35400; --soft-red: #e57373; --bg-card: #ffffff; --border-color: #ddd; }
+        :root { --primary-color: #00938a; --secondary-color: #00695c; --light-green: #26a69a; --bg-gradient: #f4f7f6; --text-color: #2c3e50; --btn-blue: #2980b9; --btn-green: #27ae60; --btn-teal: #16a085; --btn-light-green: #26a69a; --soft-red: #e57373; --bg-card: #ffffff; --border-color: #ddd; }
         .dark-mode { --primary-color: #4db6ac; --secondary-color: #00796b; --bg-gradient: #121212; --text-color: #e0e0e0; --bg-card: #2c2c2c; --border-color: #444; }
         
         body { font-family: 'Quicksand', sans-serif; font-size: 18px; background: var(--bg-gradient); color: var(--text-color); margin: 0; padding: 20px; min-height: 100vh; transition: 0.3s; }
@@ -40,7 +40,7 @@
         .btn-group { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 20px; }
         .btn { border: none; padding: 12px; border-radius: 10px; cursor: pointer; font-weight: bold; color: white; transition: 0.3s; width: 100%; }
         .btn-print { background: var(--btn-blue); }
-        .btn-pdf { background: var(--btn-orange); }
+        .btn-pdf { background: var(--btn-light-green); }
         .btn-excel { background: var(--btn-green); }
         .btn-clear { background: var(--btn-teal); }
         .btn:hover { filter: brightness(1.1); transform: translateY(-2px); }
@@ -82,7 +82,7 @@
         </div>
 
         <div class="info-bar">
-            <b>Versão 1.6 (Google Search)</b> | <b>Criação: Juliano de Castro Oliveira</b> | <b>Colaboração: Riquelme e Leonardo</b>
+            <b>Versão 1.6 </b> | <b>Criação: Juliano de Castro Oliveira</b> | <b>Colaboração: Riquelme Bernardo e Leonardo Dias</b>
             <button class="btn-toggle" onclick="toggleDarkMode()">🌓</button>
             <button class="btn-toggle" onclick="toggleLayout()">Layout</button><br>
             <b>Data da Base: 17/07/2026</b>
@@ -97,7 +97,7 @@
 
         <div class="main-content">
             <div class="search-container">
-                <input type="text" id="searchInput" onkeyup="debouncedFilter()" placeholder="🔍 Termos exatos (&quot; &quot;), Omitir (-), Alternativas (, ou ;)">
+                <input type="text" id="searchInput" onkeyup="debouncedFilter()" placeholder="🔍 Consulte: leis, balancetes, arquivos de RH, anos, tipos de documentos">
                 <button class="search-btn" onclick="debouncedFilter()" title="Pesquisar">🔍</button>
                 <button class="btn-limpar-busca" onclick="clearSearch()" title="Limpar busca">🧹</button>
             </div>
@@ -199,7 +199,7 @@
                 return;
             }
             
-            alert("Gerando PDF com os cards. Por favor, aguarde..."); 
+            alert("Gerando PDF com os dados. Por favor, aguarde..."); 
             
             const { jsPDF } = window.jspdf;
             const doc = new jsPDF();
